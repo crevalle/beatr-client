@@ -1,12 +1,13 @@
 require 'beatr/version'
 
 module Beatr
-  requre 'net/http'
+  require 'net/http'
 
   class ConfigurationError < StandardError; end
 
   def self.configure
     yield config
+    config
   end
 
   def self.config
@@ -14,13 +15,15 @@ module Beatr
   end
 
   def self.beat
-    raise ConfigurationError if config.name.nil || config.name == ''
+    raise ConfigurationError, 'please supply a beat name' if config.name.nil? || config.name == ''
 
     url = "#{base_url}/#{config.name}"
 
     Thread.new do
-      Net::HTTP.post URI.parse(url)
+      Net::HTTP.post_form URI.parse(url), {}
     end
+
+    true
   end
 
   def self.base_url

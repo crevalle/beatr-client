@@ -5,11 +5,11 @@ require 'beatr/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'Beatr'
-  spec.version       = Beatr::Gem::VERSION
+  spec.version       = Beatr::VERSION
   spec.authors       = ['Desmond Bowe']
   spec.email         = ['desmond@crevalle.io']
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = 'Gem for hitting your beats.'
+  spec.description   = 'Hit your beats.'
   spec.homepage      = ''
   spec.license       = 'MIT'
 
