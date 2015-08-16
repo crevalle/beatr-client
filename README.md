@@ -1,6 +1,6 @@
 # Beatr::Gem
 
-TODO: Write a gem description
+An easy way to send heartbeats to Beatr.io.  Makes asynchronous POST requests to the Beat of your choice.
 
 ## Installation
 
@@ -20,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Set the Beat name: `Beatr.config.name = 'gorbypuff'`.  This will be visible at http://beatr.io/gorbypuff.
+
+You can also use a block:
+```
+Beatr.configure do |c|
+  c.name = 'gorbypuff'
+end
+```
+Using Gorbypuff is optional.
 
 ## Contributing
 

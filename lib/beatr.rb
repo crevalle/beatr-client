@@ -17,7 +17,7 @@ module Beatr
   def self.beat
     raise ConfigurationError, 'please supply a beat name' if config.name.nil? || config.name == ''
 
-    url = "#{base_url}/#{config.name}"
+    url = "#{config.base_url}/#{config.name}"
 
     Thread.new do
       Net::HTTP.post_form URI.parse(url), {}
@@ -26,13 +26,13 @@ module Beatr
     true
   end
 
-  def self.base_url
-    'http://localhost:3000'
-  end
-
   class Config
 
-    attr_accessor :name
+    attr_accessor :name, :base_url
+
+    def initialize
+      @base_url = 'http://beatr.io'
+    end
 
   end
 end
