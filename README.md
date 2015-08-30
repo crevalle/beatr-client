@@ -1,4 +1,4 @@
-# Beatr::Gem
+# Beatr
 
 An easy way to send heartbeats to Beatr.io.  Makes asynchronous POST requests to the Beat of your choice.
 
