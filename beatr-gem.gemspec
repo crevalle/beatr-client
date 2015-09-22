@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'beatr/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'Beatr'
+  spec.name          = 'beatr'
   spec.version       = Beatr::VERSION
   spec.authors       = ['Desmond Bowe']
   spec.email         = ['desmond@crevalle.io']
