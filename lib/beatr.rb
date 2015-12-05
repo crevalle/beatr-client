@@ -30,7 +30,7 @@ module Beatr
     attr_reader :host
 
     def initialize
-      @host = 'http://beatr.io'
+      @host = 'http://pulse.crevalle.io'
     end
 
     def host= url
