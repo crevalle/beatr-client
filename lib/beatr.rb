@@ -15,7 +15,7 @@ module Beatr
   def self.beat name = config.name
     raise ArgumentError, 'please supply a beat name' if name.nil? || name == ''
 
-    uri = URI.parse "#{config.host}/#{URI.escape name}"
+    uri = URI.parse "#{config.host}#{config.endpoint}/#{URI.escape name}"
 
     Thread.new do
       Net::HTTP.post_form uri, {}
@@ -30,7 +30,7 @@ module Beatr
     attr_reader :host
 
     def initialize
-      @host = 'http://pulse.crevalle.io'
+      @host = 'https://pulse.crevalle.io'
     end
 
     def host= url
@@ -41,6 +41,9 @@ module Beatr
       end
     end
 
+    def endpoint
+      '/beats'
+    end
   end
 end
 
