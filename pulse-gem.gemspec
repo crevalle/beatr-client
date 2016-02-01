@@ -1,14 +1,14 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'beatr/version'
+require 'crevalle/pulse/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'beatr'
-  spec.version       = Beatr::VERSION
+  spec.name          = 'crevalle-pulse'
+  spec.version       = Crevalle::Pulse::VERSION
   spec.authors       = ['Desmond Bowe']
   spec.email         = ['desmond@crevalle.io']
-  spec.summary       = 'Gem for hitting your beats.'
+  spec.summary       = 'Client for the Pulse Heartbeat'
   spec.description   = 'Hit your beats.'
   spec.homepage      = ''
   spec.license       = 'MIT'
