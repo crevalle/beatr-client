@@ -18,6 +18,8 @@ module Crevalle
       raise ArgumentError, 'please supply a beat name' if name.nil? || name == ''
       raise 'Please configure with an api key' if config.api_key.nil?
 
+      return false if config.disabled?
+
       uri = URI.parse "#{config.host}#{config.endpoint}"
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = true
@@ -46,6 +48,14 @@ module Crevalle
 
       def endpoint
         '/api/v1/beats'
+      end
+
+      def disabled= d
+        @disabled = d
+      end
+
+      def disabled?
+        !!@disabled
       end
     end
   end

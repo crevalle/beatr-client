@@ -36,4 +36,13 @@ Crevalle::Pulse.beat 'myapp.user-signup'
 to send a beat to the Pulse server.  This request runs in a separate thread, so you can drop the notification into your normal codepaths without worrying about performance.
 
 
+## Testing
+
+You probably don't want bunches of heartbeats sent while you're running tests.  To disable beat sending, put the following in your `spec_helper.rb`:
+
+```ruby
+Crevalle::Pulse.config.disabled = true
+```
+
+
 © 2015 Crevalle Technologies, LLC
