@@ -1,13 +1,13 @@
-# Beatr
+# Pulse
 
-An easy way to send heartbeats to Beatr.io.  Makes asynchronous POST requests to the Beat of your choice.
+An easy way to send heartbeats to https://pulse.crevalle.io.  Makes asynchronous POST requests to the Heartbeat of your choice.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'beatr'
+gem 'crevalle-pulse'
 ```
 
 And then execute:
@@ -16,38 +16,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install beatr
+    $ gem install crevalle-pulse
 
 ## Usage
 
-Set the Beat name: 
+Drop in your api key:
 
 ```ruby
-# config/initializers/beatr.rb
+# config/initializers/pulse.rb
 
-Beatr.config.name = 'gorbypuff'.
-```
-You can also use a block:
-
-```
-Beatr.configure do |c|
-  c.name = 'gorbypuff'
-end
+Crevalle::Pulse.config.api_key = 'your-api-uuid'.
 ```
 
-This will be visible to anyone listening at http://beatr.io/gorbypuff.
-
-Then send a heartbeat by calling `Beatr.beat`.  You can change your Beats on fly by calling `Beatr.beat '<your-sweet-beat>'`.  This runs in a separate thread, so feel free to drop the notification into your normal codepaths without worrying about performance.
-
-Using Gorbypuff is optional.
+You're ready to send heartbeats!  Anywhere in your code, such as when a user signs up, call `Crevalle::Pulse.beat 'myapp.user-signup'` to send a beat to the Pulse server.  This request runs in a separate thread, so you can drop the notification into your normal codepaths without worrying about performance.
 
 
-## Contributing
-
-1. Fork it ( https://github.com/crevalle/beatr-client/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-
-© 2015 Crevalle Technologies, LLC 
+© 2015 Crevalle Technologies, LLC
