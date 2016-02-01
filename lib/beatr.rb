@@ -19,6 +19,7 @@ module Beatr
 
     uri = URI.parse "#{config.host}#{config.endpoint}"
     http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
 
     request = Net::HTTP::Post.new uri.request_uri
     request.body = { 'beat' => name }.to_json
