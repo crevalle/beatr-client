@@ -44,14 +44,6 @@ module Crevalle
         @host = 'https://pulse.crevalle.io'
       end
 
-      def host= url
-        if !url.include? 'http'
-          @host = "http://#{url}"
-        else
-          @host = url
-        end
-      end
-
       def endpoint
         '/api/v1/beats'
       end
