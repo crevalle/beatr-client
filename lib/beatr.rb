@@ -53,7 +53,7 @@ module Beatr
     end
 
     def endpoint
-      '/beats'
+      '/api/v1/beats'
     end
   end
 end
